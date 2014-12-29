@@ -21,7 +21,7 @@ module API
       def unsubscribe
         @topic = Topic.find(params[:id])
         @user = User.find(params[:user])
-
+        
         if @user.topics.include?(@topic)
           @user.topics.delete(@topic)
         end
