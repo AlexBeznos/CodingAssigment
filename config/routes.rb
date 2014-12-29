@@ -2,8 +2,10 @@ Rails.application.routes.draw do
 
   namespace "api" do
     namespace "v1" do
-      resources :users, only: :index
-      resources :topics, only: :index
+      resources :users, only: [ :index, :show ]
+      resources :topics, only: [ :index, :show ]
+      post 'topics/:id/subscribe' => 'topics#subscribe', as: :subscribe
+      post 'topics/:id/unsubscribe' => 'topics#unsubscribe', as: :unsubscribe
     end
   end
   # devise_for :users
