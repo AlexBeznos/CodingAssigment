@@ -14,15 +14,15 @@ module API
         @user = User.find(params[:user])
 
         unless @user.topics.include?(@topic)
-          @user.topics << @topic 
+          @user.topics << @topic
         end
       end
 
       def unsubscribe
         @topic = Topic.find(params[:id])
-        @user = User.find(params[:user]) 
+        @user = User.find(params[:user])
 
-        if @user.topics.include?(@topic) 
+        if @user.topics.include?(@topic)
           @user.topics.delete(@topic)
         end
       end

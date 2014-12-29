@@ -11,11 +11,11 @@ User.create(email: "alex_beznos@yahoo.com", password: "smt8798536116")
 
 Topic.all.each do |topic|
   User.find(1).topics << topic
-end 
+end
 
 Topic.all.each do |topic|
   User.find(3).topics << topic
-end 
+end
 
 User.find(1).topics.find(1).messages.create(body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.")
 User.find(1).topics.find(2).messages.create(body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.")
