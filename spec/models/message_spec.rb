@@ -9,14 +9,19 @@ RSpec.describe Message, :type => :model do
 
   context "test reletions" do
     before do
-      @user = FactoryGirl.build(:user)
-      @topic = FactoryGirl.build(:topic)
+      @user = FactoryGirl.create(:user)
+      @topic = FactoryGirl.create(:topic)
 
-      @topic.messages << message
+      @user.topics << @topic
+      @user.topics.find(@topic.id).messages << message
     end
 
     it "should belongs to topic" do
       @topic.messages.should include(message)
+    end
+
+    it "should add messages for user" do
+      @user.messages.should include(message)
     end
   end
 end

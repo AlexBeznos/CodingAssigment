@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20141229041501) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.string   "#<ActiveRecord::ConnectionAdapters::TableDefinition:0x00000006cc2738>"
+    t.string   "#<ActiveRecord::ConnectionAdapters::TableDefinition:0x00000006fae910>"
   end
 
   create_table "topics_users", force: true do |t|
