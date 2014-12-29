@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :validatable
   has_and_belongs_to_many :topics
   has_many :messages, :through => :topics
-  has_many :notifications, class_name: "Message", foreign_key: "user_id"
+  has_many :notifications
 end
