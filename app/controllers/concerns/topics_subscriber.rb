@@ -1,6 +1,6 @@
 module TopicsSubscriber
   extend ActiveSupport::Concern
-  
+
   def subscribe_me
     unless @user.topics.include?(@topic)
       @user.topics << @topic
