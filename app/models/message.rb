@@ -1,6 +1,6 @@
 class Message < ActiveRecord::Base
   include MessageConcern
-  after_create :send_notifications
+  after_commit :send_notifications, on: :create
   belongs_to :topic
   belongs_to :user
 end

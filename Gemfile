@@ -15,6 +15,7 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem 'guard-rspec', require: false
   gem 'factory_girl_rails'
+  gem 'test_after_commit'
 end
 
 group :production do
