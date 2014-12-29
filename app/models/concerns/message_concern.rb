@@ -1,9 +1,10 @@
 module MessageConcern
   def send_notifications
-    i = 0
+    notification = Notification.create(body: "User #{self.user.id} send message to Topic #{self.topic.id}")
     self.topic.users.each do |user|
-        notification = Notification.create(body: "User #{self.user.id} send message to Topic #{self.topic.id}")
+      unless user.id == self.user.id
         user.notifications << notification
+      end
     end
   end
 end

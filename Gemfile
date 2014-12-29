@@ -7,6 +7,7 @@ gem 'devise'
 gem 'jbuilder'
 
 gem 'spring', :group => :development
+gem 'test_after_commit', :group => :test
 
 group :development, :test do
   gem 'sqlite3'
@@ -15,7 +16,6 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem 'guard-rspec', require: false
   gem 'factory_girl_rails'
-  gem 'test_after_commit'
 end
 
 group :production do

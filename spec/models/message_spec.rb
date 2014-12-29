@@ -43,10 +43,9 @@ RSpec.describe Message, :type => :model do
       @topic.messages.last.user.should eq @user
     end
 
-    it "should send notifications" do
-      @topic.users.each do |user|
-        user.notifications.last.body.should eq "User #{@user.id} send message to Topic #{@topic.id}"
-      end
+    it "should send notifications to users in topic but not to message owner" do
+      Notification.last.users.should include(@user_2)
+      Notification.last.users.should_not include(@user)
     end
   end
 end
