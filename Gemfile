@@ -4,6 +4,7 @@ gem 'rails', '4.1.6'
 gem 'jquery-rails'
 gem 'uglifier'
 gem 'devise'
+gem 'jbuilder'
 
 gem 'spring', :group => :development
 
