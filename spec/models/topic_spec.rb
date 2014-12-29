@@ -11,8 +11,10 @@ RSpec.describe Topic, :type => :model do
     before do
       @user = FactoryGirl.build(:user)
       @user_2 = FactoryGirl.build(:user)
+      @message = FactoryGirl.build(:message)
       topic.users << @user
       topic.users << @user_2
+      topic.messages << @message
     end
 
     it "should have many users" do
@@ -23,5 +25,9 @@ RSpec.describe Topic, :type => :model do
     it "should belongs to user" do
       @user.topics.should include(topic)
     end  
+
+    it "should have many messages" do
+      topic.messages.should include(@message)
+    end
   end
 end
