@@ -1,28 +1,19 @@
-== README
+== Coding Assigment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+During code assigment you have to create simple notification system with Rest API (no web ui needed,but if you want you can create it for you own convinience some sort of Amdin Panel to see all users and topics and so on)
 
-Things you may want to cover:
+System should contains Users and Topics (message topics), each user could subscribe to each Topic.
+Each user can send message to topic (up to 255 chars)
+When one user send message to topic, all users, who subscribed to topic should get 
+Notification about new message. 
+Each Notification should contains information like "User 1 send message to Topic 2"
 
-* Ruby version
+Need following JSON Rest API:
 
-* System dependencies
+1. get all users
+2. get all topics
+3. show user, with all topics he subscribed and all notifications
+4. show topic with all messages
+5. user subscribe/unsubscribe from topic
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+No need UI or API to create users or topics, can use rake db:seed for that
