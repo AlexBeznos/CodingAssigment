@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :topics, only: [ :index, :show ]
       post 'topics/:id/subscribe' => 'topics#subscribe', as: :subscribe
       post 'topics/:id/unsubscribe' => 'topics#unsubscribe', as: :unsubscribe
+      post 'users/:user_id/topics/:topic_id/post' => 'messages#post', as: :post_message
     end
   end
   # devise_for :users
