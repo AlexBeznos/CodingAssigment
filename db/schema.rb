@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20141229084218) do
     t.integer  "user_id"
   end
 
-  add_index "messages", ["topic_id"], name: "index_messages_on_topic_id", unique: true
-  add_index "messages", ["user_id"], name: "index_messages_on_user_id", unique: true
+  add_index "messages", ["topic_id"], name: "index_messages_on_topic_id"
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "notifications", force: true do |t|
     t.string   "body"
@@ -31,13 +31,13 @@ ActiveRecord::Schema.define(version: 20141229084218) do
     t.integer  "user_id"
   end
 
-  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", unique: true
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id"
 
   create_table "topics", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.string   "#<ActiveRecord::ConnectionAdapters::TableDefinition:0x000000060284c8>"
+    t.string   "#<ActiveRecord::ConnectionAdapters::TableDefinition:0x00000007635ba8>"
   end
 
   create_table "topics_users", force: true do |t|
@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 20141229084218) do
     t.integer "topic_id"
   end
 
-  add_index "topics_users", ["topic_id"], name: "index_topics_users_on_topic_id", unique: true
-  add_index "topics_users", ["user_id"], name: "index_topics_users_on_user_id", unique: true
+  add_index "topics_users", ["topic_id"], name: "index_topics_users_on_topic_id"
+  add_index "topics_users", ["user_id"], name: "index_topics_users_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",              default: "", null: false
