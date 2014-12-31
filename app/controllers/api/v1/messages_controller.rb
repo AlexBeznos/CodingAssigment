@@ -2,8 +2,16 @@ module API
   module V1
     class MessagesController < ApplicationController
       def create
-        @message = Topic.find(params[:topic_id])
-                        .messages.create(body: params[:message], user_id: params[:user_id])
+        @message = Message.new(msg_params)
+
+        if @message.save
+          Notifier.new(@message).create
+        end
+      end
+
+      private
+      def msg_params
+        params.require(:message).permit(:body, :user_id, :topic_id)
       end
     end
   end

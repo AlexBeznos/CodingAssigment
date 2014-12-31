@@ -6,7 +6,7 @@ RSpec.describe API::V1::TopicsController do
       @user = FactoryGirl.create(:user)
       @topic = FactoryGirl.create(:topic)
 
-      post :subscribe, :id => @topic.id, :user => @user.id 
+      post :subscribe, :id => @topic.id, :user => @user.id
     end
 
     it "should response with status 200" do
@@ -24,15 +24,15 @@ RSpec.describe API::V1::TopicsController do
       @topic = FactoryGirl.create(:topic)
 
       @user.topics << @topic
-      post :unsubscribe, :id => @topic.id, :user => @user.id 
+      post :unsubscribe, :id => @topic.id, :user => @user.id
     end
 
     it "should response with status 200" do
       response.status.should eq 200
     end
-    
+
     it "should add topic to user's topics" do
       @topic.users.should_not include(@user)
     end
-  end 
+  end
 end

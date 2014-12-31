@@ -4,9 +4,9 @@ Rails.application.routes.draw do
     namespace "v1" do
       resources :users, only: [ :index, :show ]
       resources :topics, only: [ :index, :show ]
+      resources :messages, only: [:create]
       post 'topics/:id/subscribe' => 'topics#subscribe', as: :subscribe
       post 'topics/:id/unsubscribe' => 'topics#unsubscribe', as: :unsubscribe
-      post 'users/:user_id/topics/:topic_id/post' => 'messages#create', as: :post_message
     end
   end
   # devise_for :users
