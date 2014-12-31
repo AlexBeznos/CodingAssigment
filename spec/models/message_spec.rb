@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Message, :type => :model do
   let(:message) { FactoryGirl.create(:message) }
-  
+
   it "should have valid factory" do
     message.should be_valid
   end
@@ -41,11 +41,6 @@ RSpec.describe Message, :type => :model do
     it "should make message" do
       @topic.messages.last.body.should eq @body
       @topic.messages.last.user.should eq @user
-    end
-
-    it "should send notifications to users in topic but not to message owner" do
-      Notification.last.users.should include(@user_2)
-      Notification.last.users.should_not include(@user)
     end
   end
 end
