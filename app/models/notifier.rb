@@ -7,11 +7,11 @@ class Notifier
     @notification = Notification.new(body: "User #{@message.user.id} send message to Topic #{@message.topic.id}")
 
     if @notification.save
-      self.send
+      send
     end
   end
 
-  protected
+  private
   def send
     @message.topic.users.each do |user|
       unless user.id == @message.user.id
