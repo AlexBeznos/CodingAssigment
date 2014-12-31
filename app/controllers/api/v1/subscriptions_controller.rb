@@ -4,13 +4,11 @@ module API
       def create
         @subscription = Subscription.new(sb_params)
         @subscription.subscribe
-        @subscribe
       end
 
       def delete
         @subscription = Subscription.new(sb_params)
         @subscription.unsubscribe
-        @subscribe
       end
 
       private
